@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 align="center">Welcome to static web page</h1>
+
+<form action="/Hello " method="get">
+
+<input type = "text" name = "name">
+<input type = "submit" value = "login"> 
+
+</form>
+
+</body>
+</html>
