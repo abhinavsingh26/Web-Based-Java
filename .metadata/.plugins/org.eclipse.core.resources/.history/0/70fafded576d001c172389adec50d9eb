@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Adding servlet</title>
+</head>
+<body>
+
+<form action="Add" method="get">
+
+First No: <input type="text" name= "n1">
+Second No: <input type="text" name= "n2">
+
+<input type = "submit" value="login">
+
+</form>
+
+<a href ="Login">Go to Login servlet</a>
+<a href ="">Go to Reverse Number App</a>
+
+
+</body>
+</html>
