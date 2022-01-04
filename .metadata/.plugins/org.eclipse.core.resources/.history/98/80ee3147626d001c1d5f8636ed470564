@@ -15,17 +15,18 @@ public class reverseNumber extends HttpServlet
 		
 		PrintWriter out =  res.getWriter();
 		res.setContentType("text/html"); 
-		out.println(" Reverse Number is :  ");
-
-		int num2 =Integer.parseInt(req.getParameter("n1"));
+		out.println("welcome to Reverse Number ");
+		int div = 10;
+		int sum, temp;
+		int num1 =Integer.parseInt(req.getParameter("n1"));
 		
 
 		
 		int rev_num = 0;
-	    while (num2 > 0)
+	    while (num1 > 0)
 	    {
-	        rev_num = rev_num*10 + num2%10;
-	        num2 = num2/10;
+	        rev_num = rev_num*10 + num1%10;
+	        num1 = num1/10;
 	    }
 	    out.println(rev_num);
 		

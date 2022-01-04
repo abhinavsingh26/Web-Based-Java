@@ -36,4 +36,16 @@
 <servlet-name>RN</servlet-name>
 <url-pattern>/RevNum</url-pattern>
 </servlet-mapping>
+
+<servlet>
+<servlet-name>E/O</servlet-name>
+<servlet-class>com.day_2.evenOdd </servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>E/O</servlet-name>
+<url-pattern>/EO</url-pattern>
+</servlet-mapping>
+
+
 </web-app>

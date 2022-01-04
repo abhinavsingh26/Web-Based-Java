@@ -2,16 +2,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Integer Reverse App</title>
+<title>Insert title here</title>
 </head>
 <body>
-<form action="RevNum" method="get">
+<form action="EO" method="get">
 
-Enter No: <input type="text" name= "n1">
+Enter no find even or odd : <input type="text" name= "n3">
 
 
 <input type = "submit" value="check">
 
 </form>
+
 </body>
 </html>

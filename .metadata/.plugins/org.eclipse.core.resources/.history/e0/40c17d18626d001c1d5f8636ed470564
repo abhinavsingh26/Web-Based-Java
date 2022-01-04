@@ -15,9 +15,9 @@ Second No: <input type="text" name= "n2">
 
 </form>
 
-<a href ="Login">Go to Login servlet</a><br>
-<a href ="RevNumInput.html">Go to Reverse Number App</a><br>
-<a href ="evenOdd.html">Go to Even Odd App</a>
+<a href ="Login">Go to Login servlet</a>
+<a href ="RevNumInput.html">Go to Reverse Number App</a>
+
 
 </body>
 </html>
