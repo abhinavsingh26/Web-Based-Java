@@ -22,4 +22,6 @@ public class LoginServlet extends HttpServlet
 		out.println("welcome to Login servlet ");
 		
 	}
+	
+	
 }
