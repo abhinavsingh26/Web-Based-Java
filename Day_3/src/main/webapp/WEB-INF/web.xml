@@ -8,13 +8,16 @@
 	
 <servlet>
 <servlet-name>xyz</servlet-name>
-<servlet-class>com.day_3.FirstServlet</servlet-class>
+<servlet-class>com.Day_3.FirstServlet</servlet-class>
 </servlet>
 
 <servlet-mapping>
 <servlet-name>xyz</servlet-name>
 <url-pattern>/First </url-pattern>
 </servlet-mapping>
+
+
+
 	
 
 </web-app>
