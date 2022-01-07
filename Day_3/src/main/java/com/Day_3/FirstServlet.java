@@ -21,7 +21,7 @@ public class FirstServlet extends HttpServlet {
 		String name = req.getParameter("name");
 		String password = req.getParameter("password");
 		
-		out.println("welcome"+ name);
+		out.println("welcome : "+ name);
 		
 	}
-}
+}    
