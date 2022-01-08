@@ -29,7 +29,7 @@
 	
 	<servlet>
 <servlet-name>lmn</servlet-name>
-<servlet-class>com.Day_3.LoginServlet</servlet-class>
+<servlet-class>com.Day_3.LoginSuccessServlet</servlet-class>
 </servlet>
 
 <servlet-mapping>
