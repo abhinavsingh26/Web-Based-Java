@@ -27,5 +27,14 @@
 </servlet-mapping>
 
 	
+	<servlet>
+<servlet-name>lmn</servlet-name>
+<servlet-class>com.Day_3.LoginServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>lmn</servlet-name>
+<url-pattern>/LoginSuccess </url-pattern>
+</servlet-mapping>
 
 </web-app>
