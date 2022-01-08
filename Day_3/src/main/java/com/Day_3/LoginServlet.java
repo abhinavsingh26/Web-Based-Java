@@ -24,6 +24,8 @@ public class LoginServlet extends HttpServlet {
 		
 		if(name.equals("admin") && password.equals("admin")){
 			
+			request.setAttribute("name", name);
+			
 			RequestDispatcher rd = request.getRequestDispatcher("LoginSuccess");
 			rd.forward(request, response);
 		

@@ -17,8 +17,10 @@ public class LoginSuccessServlet extends HttpServlet {
 		PrintWriter out =  response.getWriter();
 		response.setContentType("text/html");
 		
+		String name = (String) request.getAttribute("name");
+		
 		out.println("Login Success...");
-		out.println("name");
+		out.println("Welcome : " + name);
 	}
 
 }
