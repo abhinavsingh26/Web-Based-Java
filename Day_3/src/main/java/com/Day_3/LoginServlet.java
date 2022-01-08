@@ -29,8 +29,9 @@ public class LoginServlet extends HttpServlet {
 		
 		
 		}else {
-			RequestDispatcher rd = request.getRequestDispatcher("Login.html");
+			RequestDispatcher rd = request.getRequestDispatcher("error.html");
 			rd.forward(request, response);
+			
 		}
 		
 	}
