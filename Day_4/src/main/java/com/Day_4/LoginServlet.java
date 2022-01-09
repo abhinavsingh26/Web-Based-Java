@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -36,12 +37,17 @@ public class LoginServlet extends HttpServlet {
 		//rd.forward(request,response);
 		
 		//Application Scope
-		
-		ServletContext sc = getServletContext();
-		sc.setAttribute("user", name);
+		//ServletContext sc = getServletContext();
+		//sc.setAttribute("user", name);
 				
-		RequestDispatcher rd = request.getRequestDispatcher("LoginSuccess");
+		//RequestDispatcher rd = request.getRequestDispatcher("LoginSuccess");
+		//rd.forward(request,response);
+		//-----------------------------------------------------------------------------------------------------------------------------
+		Cookie ck = new Cookie("user", "shan");
+		response.addCookie(ck);
+		RequestDispatcher rd = request.getRequestDispatcher("LoginSuccess.......");
 		rd.forward(request,response);
+		
 	} 
 
 }
