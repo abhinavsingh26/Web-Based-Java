@@ -22,7 +22,7 @@ public class Feedback extends HttpServlet {
 		Cookie ck[] =request.getCookies();
 		String name = ck[0].getValue();
 		
-		if(!name.equals(" "))
+		if(!name.equals(""))
 		{
 			out.println("Welcome : " + name);
 			out.println("You are allowed to give feedback");
@@ -32,7 +32,7 @@ public class Feedback extends HttpServlet {
 			out.println("Login Again..");
 			
 		}
-		
+	
 		RequestDispatcher rd = request.getRequestDispatcher("Menu.html");
 		rd.forward(request,response);
 		

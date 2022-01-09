@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 public class LoginServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 		out.println("Login Success.");
 		
 		RequestDispatcher rd = request.getRequestDispatcher("Menu.html");
-		rd.forward(request,response);
+		rd.include(request,response);
 
 	}
 
