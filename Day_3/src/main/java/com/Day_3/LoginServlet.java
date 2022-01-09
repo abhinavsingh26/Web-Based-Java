@@ -31,8 +31,15 @@ public class LoginServlet extends HttpServlet {
 		
 		
 		}else {
-			RequestDispatcher rd = request.getRequestDispatcher("error.html");
-			rd.forward(request, response);
+			
+			
+			RequestDispatcher rd = request.getRequestDispatcher("Header.html");
+			rd.include(request, response);
+			
+			out.println("Incorrect Login.... Login Again");
+			
+			RequestDispatcher rd1 = request.getRequestDispatcher("Login.html");
+			rd1.include(request, response);
 			
 		}
 		

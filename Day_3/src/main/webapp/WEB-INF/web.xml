@@ -5,7 +5,7 @@
   	<welcome-file>Login.html</welcome-file>
   </welcome-file-list>
 	
-	
+
 <servlet>
 <servlet-name>xyz</servlet-name>
 <servlet-class>com.Day_3.FirstServlet</servlet-class>
@@ -35,6 +35,20 @@
 <servlet-mapping>
 <servlet-name>lmn</servlet-name>
 <url-pattern>/LoginSuccess </url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>pqr</servlet-name>
+<servlet-class>com.Day_3.SevletConfigExampleServlet</servlet-class>
+<init-param>
+<param-name>dbname</param-name>
+<param-value>oracle</param-value>
+</init-param>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>pqr</servlet-name>
+<url-pattern>/readparam </url-pattern>
 </servlet-mapping>
 
 </web-app>
