@@ -4,10 +4,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 public class LoginServlet extends HttpServlet {
@@ -21,11 +23,25 @@ public class LoginServlet extends HttpServlet {
 		PrintWriter out =  response.getWriter();
 		response.setContentType("text/html");
 		
-		request.setAttribute("uname", name);
+		//Request Scope
+		//request.setAttribute("uname", name);
+		//RequestDispatcher rd = request.getRequestDispatcher("LoginSuccess");
+		//rd.forward(request,response);
 		
+		//Session Scope
+		//HttpSession session = request.getSession();
+		//session.setAttribute("user", name);
+		
+		//RequestDispatcher rd = request.getRequestDispatcher("LoginSuccess");
+		//rd.forward(request,response);
+		
+		//Application Scope
+		
+		ServletContext sc = getServletContext();
+		sc.setAttribute("user", name);
+				
 		RequestDispatcher rd = request.getRequestDispatcher("LoginSuccess");
 		rd.forward(request,response);
-				
-	}
+	} 
 
 }
