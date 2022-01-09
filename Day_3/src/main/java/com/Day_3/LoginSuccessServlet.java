@@ -3,6 +3,7 @@ package com.Day_3;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,9 +18,12 @@ public class LoginSuccessServlet extends HttpServlet {
 		PrintWriter out =  response.getWriter();
 		response.setContentType("text/html");
 		
-		String name = (String) request.getAttribute("name");
+		ServletContext context = getServletContext();
+		String dname = context.getInitParameter("drivername");
+		out.println("Context param value is = " + dname);
 		
-		out.println("Login Success...");
+		String name = (String) request.getAttribute("name");
+		out.println("Login Success...<br>");
 		out.println("Welcome : " + name);
 	}
 
