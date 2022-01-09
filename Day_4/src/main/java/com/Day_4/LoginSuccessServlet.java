@@ -13,16 +13,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-@WebServlet("/LoginSuccessServlet")
+//@WebServlet("/LoginSuccessServlet")
 public class LoginSuccessServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		PrintWriter out =  response.getWriter();
 		response.setContentType("text/html");
-		
 		
 		//Request
 		//  String name = (String) request.getAttribute("uname");
@@ -40,14 +39,13 @@ public class LoginSuccessServlet extends HttpServlet {
 		
 		//Cookies
 		Cookie ck[] =request.getCookies();
-		//String name = ck[0].getValue();
+		//out.println(ck[1].getValue());
 		
-		for(Cookie c: ck)
-		{
-			String name = c.getName();
-			out.println("Welcome to login  : " + name);
-		}
-		
-	}
-      
+
+		for(int i= 0; i<ck.length; i++) 
+		{ 
+			out.print("<br>"+ck[i].getValue()); 
+			}
+
+	}      
 }

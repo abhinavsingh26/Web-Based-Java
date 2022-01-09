@@ -43,9 +43,13 @@ public class LoginServlet extends HttpServlet {
 		//RequestDispatcher rd = request.getRequestDispatcher("LoginSuccess");
 		//rd.forward(request,response);
 		//-----------------------------------------------------------------------------------------------------------------------------
-		Cookie ck = new Cookie("user", "shan");
+		
+		Cookie ck = new Cookie("user", name);
+		Cookie ck1 = new Cookie("pwd", password);
 		response.addCookie(ck);
-		RequestDispatcher rd = request.getRequestDispatcher("LoginSuccess.......");
+		response.addCookie(ck1);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("Login.html");
 		rd.forward(request,response);
 		
 	} 
