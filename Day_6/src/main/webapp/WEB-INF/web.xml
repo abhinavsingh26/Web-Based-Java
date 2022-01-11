@@ -14,4 +14,14 @@
 <servlet-name>xyz</servlet-name>
 <url-pattern>/Login </url-pattern>
 </servlet-mapping>
+
+<servlet>
+<servlet-name>abc</servlet-name>
+<servlet-class>com.Day_6.LoginSuccessServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>abc</servlet-name>
+<url-pattern>/LoginSuccess </url-pattern>
+</servlet-mapping>
 </web-app>

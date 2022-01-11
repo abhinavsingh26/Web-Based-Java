@@ -3,8 +3,8 @@ package com.Day_6;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,6 +23,17 @@ public class LoginServlet extends HttpServlet {
 		
 		String name = request.getParameter("name"); 
 		String password = request.getParameter("password");
+		
+		if(name.equals("admin") && password.equals("admin")) {
+			request.setAttribute(name, password);
+			
+			out.println("Login Success");
+			
+			RequestDispatcher rd = request.getRequestDispatcher("LoginSuccess");
+			rd.forward(request, response);
+		}else {
+			out.print("Incorrect login details , Login Again");
+		}
 	}
 
 }
