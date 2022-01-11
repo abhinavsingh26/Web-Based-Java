@@ -2,6 +2,7 @@ package com.JDBC;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,25 +19,30 @@ public class LoginServlet extends HttpServlet {
 		PrintWriter out =  response.getWriter();
 		response.setContentType("text/html");
 		
+		UserDao ud = new UserDao();
+		
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		
-		if(password.equals("admin") && password.equals("admin")) {
-			
-			out.print("You are successfully logged in. ");
-			out.print("<br>Welcome , " + name);
-			
-			HttpSession session= request.getSession();
-			session.setAttribute("name", name);
-			
-		}else {
-			
-			out.print("sorry,Username or Password error ! ");
-			request.getRequestDispatcher("Login.html").include(request, response);
-			
+		try {
+			if(ud.validateUser(name, password)) {
+				
+				out.print("You are successfully logged in. ");
+				out.print("<br>Welcome , " + name);
+				
+				HttpSession session= request.getSession();
+				session.setAttribute("name", name);
+				
+			}else {
+				
+				out.print("sorry,Username or Password error ! ");
+				request.getRequestDispatcher("Login.html").include(request, response);
+				
+			}
+		} catch (ClassNotFoundException | SQLException | ServletException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}		 
 		out.close();
-
 	}
-
 }
