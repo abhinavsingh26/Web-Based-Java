@@ -13,10 +13,18 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/fdbg")
 public class fdbg extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-      // jl.ll/..kl;
+      @Override
+	public String toString() {
+		return "fdbg [getInitParameterNames()=" + getInitParameterNames() + ", getServletConfig()=" + getServletConfig()
+				+ ", getServletContext()=" + getServletContext() + ", getServletInfo()=" + getServletInfo()
+				+ ", getServletName()=" + getServletName() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
+	}
+
+	// jl.ll/..kl;
     /**
      * @see HttpServlet#Htt./km./pServlet()
-     */
+     <b>    */
     public fdbg() {
         super();
         // TODO Auto-generated constructor stub
