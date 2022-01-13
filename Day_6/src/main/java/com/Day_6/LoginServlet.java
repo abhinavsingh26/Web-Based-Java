@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 			request.setAttribute(name, password);
 			
 			out.println("Login Success");
-			
+										
 			RequestDispatcher rd = request.getRequestDispatcher("LoginSuccess");
 			rd.forward(request, response);
 		}else {
