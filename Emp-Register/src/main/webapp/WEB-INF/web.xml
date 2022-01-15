@@ -13,4 +13,25 @@
 <servlet-name>xyz</servlet-name>
 <url-pattern>/Emp </url-pattern>
 </servlet-mapping>
+
+<servlet>  
+    <servlet-name>abc</servlet-name>  
+    <servlet-class>com.register.EmployeeServlet</servlet-class>  
+  </servlet>  
+  <servlet-mapping>  
+    <servlet-name>abc</servlet-name>  
+    <url-pattern>/Success</url-pattern>  
+  </servlet-mapping> 
+  
+   <servlet>  
+    <servlet-name>qwe</servlet-name>  
+    <servlet-class>com.register.SuccessServlet</servlet-class>  
+  </servlet>  
+  <servlet-mapping>  
+    <servlet-name>qwe</servlet-name>  
+    <url-pattern>/viewEmp</url-pattern>  
+  </servlet-mapping> 
+
+
+
 </web-app>
