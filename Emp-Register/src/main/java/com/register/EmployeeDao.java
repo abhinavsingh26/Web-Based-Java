@@ -6,11 +6,17 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class EmployeeDao {
+	public static Connection createConnection() throws ClassNotFoundException, SQLException
+	{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login_details","root","eov3zl5ilx7c");	
+		return con;
+		
+	}
+	
 	public int insertEmployee(Employee emp) throws ClassNotFoundException, SQLException {
 		
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login_details","root","eov3zl5ilx7c");
+		Connection con = EmployeeDao.createConnection();
 		
 		System.out.println("Connection got with mysql");
 		

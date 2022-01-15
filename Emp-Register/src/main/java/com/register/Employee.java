@@ -1,23 +1,23 @@
 package com.register;
-
 import java.io.Serializable;
 
-public class Employee implements Serializable {
+public class Employee implements Serializable
+{
 
-	private static final long serialVersionUID = 1L;
 	String name;
 	String address;
 	String email;
 	String contact;
 	
-	public Employee() {}
-	
+public Employee() {}
+		
+		
 	public Employee(String name, String address, String email, String contact) {
- 
+		
 		this.name = name;
 		this.address = address;
 		this.email = email;
-		this.contact= contact;
+		this.contact = contact;
 	}
 
 	public String getName() {
@@ -51,5 +51,6 @@ public class Employee implements Serializable {
 	public void setContact(String contact) {
 		this.contact = contact;
 	}
-
+	
+	
 }
