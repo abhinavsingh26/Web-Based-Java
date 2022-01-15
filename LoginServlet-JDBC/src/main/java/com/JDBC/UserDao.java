@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDao {
-	public boolean validateUser(String uname, String password) throws ClassNotFoundException, SQLException {
+	public boolean validateUser(User user) throws ClassNotFoundException, SQLException {
 		
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		
@@ -18,8 +18,8 @@ public class UserDao {
 		String q= "select * from uid where uname = ? and password= ? ";
 		PreparedStatement pmt = con.prepareStatement(q);
 		
-		pmt.setString(1, uname);
-		pmt.setString(2, password);
+		pmt.setString(1, user.getUsername());
+		pmt.setString(2, user.getPassword());
 		
 		ResultSet rs=pmt.executeQuery();
 		

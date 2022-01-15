@@ -20,12 +20,17 @@ public class LoginServlet extends HttpServlet {
 		response.setContentType("text/html");
 		
 		UserDao ud = new UserDao();
+		User user;
 		
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		
+		user = new User(name, password);
+		
+		
+		
 		try {
-			if(ud.validateUser(name, password)) {
+			if(ud.validateUser(user)) {
 				
 				out.print("You are successfully logged in. ");
 				out.print("<br>Welcome , " + name);

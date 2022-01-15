@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 
 public class LoginSuccessServlet extends HttpServlet {
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		PrintWriter out =  response.getWriter();
 		response.setContentType("text/html");    
 		
-		String name = (String) request.getParameter("name");
+		String name = (String) request.getParameter("uname");
 		out.println("Login Success.....................<br>");
-		out.println("welcome");
+		out.println("welcome : " + name);
 	}
 
 }

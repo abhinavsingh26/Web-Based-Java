@@ -25,12 +25,16 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		if(name.equals("admin") && password.equals("admin")) {
-			request.setAttribute(name, password);
+			
 			
 			out.println("Login Success");
+			
+			response.sendRedirect("LoginSuccess?uname"+name);
+			
+			//response.sendRedirect("http://www.google.com");
 										
-			RequestDispatcher rd = request.getRequestDispatcher("LoginSuccess");
-			rd.forward(request, response);
+			//RequestDispatcher rd = request.getRequestDispatcher("LoginSuccess");
+			//rd.forward(request, response);
 		}else {
 			out.print("Incorrect login details , Login Again");
 		}
