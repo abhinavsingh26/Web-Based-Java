@@ -15,9 +15,8 @@ import javax.servlet.http.HttpSession;
 public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		PrintWriter out =  response.getWriter();
 		response.setContentType("text/html");
+		PrintWriter out =  response.getWriter();
 		
 		UserDao ud = new UserDao();
 		User user;
@@ -26,17 +25,12 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		user = new User(name, password);
-		
-		
-		
+
 		try {
 			if(ud.validateUser(user)) {
 				
 				out.print("You are successfully logged in. ");
 				out.print("<br>Welcome , " + name);
-				
-				HttpSession session= request.getSession();
-				session.setAttribute("name", name);
 				
 			}else {
 				

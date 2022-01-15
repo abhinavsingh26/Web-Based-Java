@@ -23,10 +23,16 @@ public class UserDao {
 		
 		ResultSet rs=pmt.executeQuery();
 		
+		boolean status;
+		
 		if (rs.next()) {
-			return true;
-		}else {
-			return false;
+			status =  true;
 		}
+		else {
+			status =  false;
+		}
+		
+		return status;
 	}
 }
+;
