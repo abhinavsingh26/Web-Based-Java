@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/EmployeeServlet")
+//@WebServlet("/EmployeeServlet")
 public class EmployeeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -31,13 +31,18 @@ public class EmployeeServlet extends HttpServlet {
 		EmployeeDao edao = new EmployeeDao();
 		
 		try {
-			edao.insertEmployee(emp);
+			int result = edao.insertEmployee(emp);
+			if(result !=0) {
+				out.println("Record inserted Successfully..");
+			}else {
+				out.println("Record not inserted ");
+			}
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		
-	}
+	} 
 
 }

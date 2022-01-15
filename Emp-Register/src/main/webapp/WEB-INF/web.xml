@@ -3,7 +3,6 @@
   <welcome-file-list>
   	<welcome-file>Register.html</welcome-file>
   </welcome-file-list>
-	
 
 <servlet>
 <servlet-name>xyz</servlet-name>

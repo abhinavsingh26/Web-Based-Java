@@ -3,11 +3,10 @@ package com.register;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class EmployeeDao {
-public boolean insertEmployee(Employee emp) throws ClassNotFoundException, SQLException {
+	public int insertEmployee(Employee emp) throws ClassNotFoundException, SQLException {
 		
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		
@@ -25,7 +24,7 @@ public boolean insertEmployee(Employee emp) throws ClassNotFoundException, SQLEx
 		
 		int result=pmt.executeUpdate();
 		
-		boolean status;
+		return result;
 		
 		
 	}
