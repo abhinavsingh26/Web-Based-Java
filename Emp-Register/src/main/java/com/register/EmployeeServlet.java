@@ -2,6 +2,7 @@ package com.register;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,6 +25,18 @@ public class EmployeeServlet extends HttpServlet {
 		String address = request.getParameter("addresss");
 		String email = request.getParameter("email");
 		String contact = request.getParameter("contact");
+		
+		
+		Employee emp = new Employee(name, address,email, contact);
+		EmployeeDao edao = new EmployeeDao();
+		
+		try {
+			edao.insertEmployee(emp);
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 	}
 
