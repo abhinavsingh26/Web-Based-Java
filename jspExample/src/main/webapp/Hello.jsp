@@ -8,8 +8,18 @@
 </head>
 <body>
 <h1>
-<% out.print("welcome to jsp"); %>
-
+<%! int n1 = 10, n2 = 20, sum = 0; 
+public int add(int n1, int n2)
+	{
+		sum = n1+ n2;
+		return sum;
+	}
+%> 
+<% out.print("welcome to jsp"); 
+%>
+<br>
+<%= "sum of n1 and n2 : " + add(n1,n2) %>
 </h1>
+<B>Program Done</B>
 </body>
 </html>
