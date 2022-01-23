@@ -71,7 +71,7 @@ public class UserServlet extends HttpServlet {
 			throws SQLException, IOException, ServletException {
 		List<User> listUser = userDAO.selectAllUsers();
 		request.setAttribute("listUser", listUser);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("user-list.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher(" .jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -89,14 +89,15 @@ public class UserServlet extends HttpServlet {
 	
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
-		User existingUser = userDAO.selectUser(id);
+		int pid = Integer.parseInt(request.getParameter("pid"));
+		User existingUser = userDAO.selectUser(pid);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("user-form.jsp");
 		request.setAttribute("user", existingUser);
 		dispatcher.forward(request, response);
 
 	}
 
+	//--------------------------------------------------------------------------------------
 	private void insertUser(HttpServletRequest request, HttpServletResponse response) 
 			throws SQLException, IOException {
 		String pname = request.getParameter("pname");
@@ -110,12 +111,12 @@ public class UserServlet extends HttpServlet {
 //------------------------------------------------------------------------------------------------------------------------------------
 	private void updateUser(HttpServletRequest request, HttpServletResponse response) 
 			throws SQLException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
-		String name = request.getParameter("name");
-		String email = request.getParameter("email");
-		String country = request.getParameter("country");
-
-		User book = new User(id, name, email, country);
+		int pid = Integer.parseInt(request.getParameter("pid"));
+		String pname = request.getParameter("pname");
+		String pprice = request.getParameter("pprice");
+		String pquantity = request.getParameter("pquantity");
+		String pdiscount = request.getParameter("pdiscount");
+		User book = new User(pid, pname, pprice, pquantity,pdiscount);
 		userDAO.updateUser(book);
 		response.sendRedirect("list");
 	}
@@ -123,12 +124,9 @@ public class UserServlet extends HttpServlet {
 	//-------------------------------------------------------------------------------------------------------------------------------
 	private void deleteUser(HttpServletRequest request, HttpServletResponse response) 
 			throws SQLException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
-		userDAO.deleteUser(id);
+		int pid = Integer.parseInt(request.getParameter("pid"));
+		userDAO.deleteUser(pid);
 		response.sendRedirect("list");
-
 	}
 
-	
-	
 }
