@@ -7,7 +7,7 @@
   </welcome-file-list>
   
   
-  <servlet>
+ <servlet>
 <servlet-name>xyz</servlet-name>
 <servlet-class>management.login.LoginServlet</servlet-class>
 </servlet>

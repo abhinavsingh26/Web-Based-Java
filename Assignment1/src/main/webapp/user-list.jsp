@@ -37,7 +37,12 @@
 			<div class="container text-left">
 
 				<a href="<%=request.getContextPath()%>/new" class="btn btn-success">Add
-					New User</a>
+					Product</a>
+				<a href="<%=request.getContextPath()%>/new" class="btn btn-success">
+					Search Product</a>
+				<a href="<%=request.getContextPath()%>/new" class="btn btn-success">
+					Total Product</a>
+				
 			</div>
 			<br>
 			<table class="table table-bordered">
@@ -60,8 +65,8 @@
 							<td><c:out value="${user.pquantity}" /></td>
 							<td><c:out value="${user.pdiscount}" /></td>
 							<td><a href="edit?id=<c:out value='${user.id}' />">Edit</a>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-								href="delete?id=<c:out value='${user.id}' />">Delete</a></td>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+							<a href="delete?id=<c:out value='${user.id}' />">Delete</a></td>
 						</tr>
 					</c:forEach>
 	

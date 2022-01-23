@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//import com.Day_6.UserDao;
 
 
 public class LoginServlet extends HttpServlet {
@@ -17,9 +16,7 @@ public class LoginServlet extends HttpServlet {
 	
 		PrintWriter out =  response.getWriter();
 		response.setContentType("text/html");    
-		
-		//UserDao ud = new UserDao();
-		
+
 		String name = request.getParameter("name"); 
 		String password = request.getParameter("password");
 		

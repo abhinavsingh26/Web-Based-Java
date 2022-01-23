@@ -17,10 +17,6 @@
 				<h1 class="navbar-brand"> Product Shop </h1>
 			</div>
 
-			<ul class="navbar-nav">
-				<li><a href="<%=request.getContextPath()%>/list"
-					class="nav-link">Users</a></li>
-			</ul>
 		</nav>
 	</header>
 	<br>
@@ -37,10 +33,10 @@
 				<caption>
 					<h2>
 						<c:if test="${user != null}">
-            			Edit User
+            			Edit Product
             		</c:if>
 						<c:if test="${user == null}">
-            			Add New User
+            			Add New Product
             		</c:if>
 					</h2>
 				</caption>
@@ -50,24 +46,36 @@
 				</c:if>
 
 				<fieldset class="form-group">
-					<label>User Name</label> <input type="text"
-						value="<c:out value='${user.name}' />" class="form-control"
-						name="name" required="required">
+					<label>ID</label> <input type="text"
+						value="<c:out value='${user.pid}' />" class="form-control"
+						name="pid" required="required">
+				</fieldset>
+				
+				<fieldset class="form-group">
+					<label>Product Name</label> <input type="text"
+						value="<c:out value='${user.pname}' />" class="form-control"
+						name="pname" required="required">
 				</fieldset>
 
 				<fieldset class="form-group">
-					<label>User Email</label> <input type="text"
-						value="<c:out value='${user.email}' />" class="form-control"
-						name="email">
+					<label>Product Price</label> <input type="text"
+						value="<c:out value='${user.pprice}' />" class="form-control"
+						name="pprice">
 				</fieldset>
 
 				<fieldset class="form-group">
-					<label>User Country</label> <input type="text"
-						value="<c:out value='${user.country}' />" class="form-control"
-						name="country">
+					<label>Product Quantity</label> <input type="text"
+						value="<c:out value='${user.pquantity}' />" class="form-control"
+						name="pquantity">
+				</fieldset>
+				
+				<fieldset class="form-group">
+					<label>Product Discount</label> <input type="text"
+						value="<c:out value='${user.pdiscount}' />" class="form-control"
+						name="pdiscount">
 				</fieldset>
 
-				<button type="submit" class="btn btn-success">Save</button>
+				<button type="submit" class="btn btn-success">Add</button>
 				</form>
 			</div>
 		</div>
