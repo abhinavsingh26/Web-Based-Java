@@ -23,10 +23,10 @@
 	<div class="container col-md-5">
 		<div class="card">
 			<div class="card-body">
-				<c:if test="${user != null}">
+				<c:if test="${product != null}">
 					<form action="update" method="post">
 				</c:if>
-				<c:if test="${user == null}">
+				<c:if test="${product == null}">
 					<form action="insert" method="post">
 				</c:if>
 

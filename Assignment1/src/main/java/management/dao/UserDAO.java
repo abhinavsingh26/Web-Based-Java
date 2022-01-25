@@ -13,7 +13,7 @@ import management.model.User;
 
 public class UserDAO {
 	
-	private String jdbcURL = "jdbc:mysql://localhost:3306/shop?useSSL=false";
+	private String jdbcURL = "jdbc:mysql://localhost:3306/shop";
 	private String jdbcUsername = "root";
 	private String jdbcPassword = "eov3zl5ilx7c";
 	
@@ -34,13 +34,11 @@ public class UserDAO {
 		protected Connection getConnection() {
 			Connection connection = null;
 			try {
-				Class.forName("com.mysql.jdbc.Driver");
+				Class.forName("com.mysql.cj.jdbc.Driver");
 				connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return connection;
@@ -49,7 +47,6 @@ public class UserDAO {
 		
 		public void insertUser(User user) throws SQLException {
 			System.out.println(INSERT_USERS_SQL);
-			// try-with-resource statement will auto close the connection.
 			try (Connection connection = getConnection();
 					PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
 				preparedStatement.setString(1, user.getPname());

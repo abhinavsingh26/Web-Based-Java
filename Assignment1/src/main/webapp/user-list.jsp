@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    
+     <%@ page import = "management.web.UserServlet" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +16,7 @@
 <body>
 
 	<header>
-		<nav class="navbar navbar-expand-md navbar-dark"
+		<nav class="navbar"
 			style="background-color: tomato">
 			<div>
 				<h1 class="navbar-brand"> Login Success, Welcome Admin </h1>
@@ -22,7 +24,7 @@
 
 			<ul class="navbar-nav">
 				<li><a href="<%=request.getContextPath()%>/list"
-					class="nav-link">Users</a></li>
+					class="nav-link">Products</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -40,7 +42,7 @@
 					Product</a>
 				<a href="<%=request.getContextPath()%>/new" class="btn btn-success">
 					Search Product</a>
-				<a href="<%=request.getContextPath()%>/new" class="btn btn-success">
+				<a href="<%=request.getContextPath()%>/list" class="btn btn-success">
 					Total Product</a>
 				
 			</div>
@@ -64,9 +66,9 @@
 							<td><c:out value="${user.pprice}" /></td>
 							<td><c:out value="${user.pquantity}" /></td>
 							<td><c:out value="${user.pdiscount}" /></td>
-							<td><a href="edit?id=<c:out value='${user.id}' />">Edit</a>
+							<td><a href="edit?id=<c:out value='${user.pid}' />">Edit</a>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-							<a href="delete?id=<c:out value='${user.id}' />">Delete</a></td>
+							<a href="delete?id=<c:out value='${user.pid}' />">Delete</a></td>
 						</tr>
 					</c:forEach>
 	
